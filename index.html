@@ -1,0 +1,99 @@
+<?xml encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Security Demo</title>
+</head>
+<body>
+<h1>Security Demo</h1>
+<h2>XSS</h2>
+<h3>普通</h3>
+<ul>
+        <li><a href="xss/xss.php">XSS 1</a></li>
+        <li><a href="xss/xss1_1.php">XSS 1.1</a></li>
+</ul>
+<h3>URL</h3>
+<ul>
+        <li><a href="xss/xss2.php">XSS 2 (a)</a></li>
+        <li><a href="xss/xss2_2.php">XSS 2 (iframe)</a></li>
+</ul>
+<h3>JavaScriptリテラル</h3>
+<ul>
+        <li><a href="xss/literal.php">literal</a></li>
+</ul>
+<h3>JavaScript関数・プロパティ</h3>
+<ul>
+        <li><a href="xss/property.php">property</a></li>
+</ul>
+<!--
+<h3>JSON, JSONP</h3>
+<ul>
+        <li><a href="xss/json.php">JSON</a></li>
+        <li><a href="xss/jsonp.php">JSONP</a></li>
+</ul>
+<h3>文字エンコーディング</h3>
+<ul>
+        <li><a href="xss/xss3.php">XSS 3 (EUC-JP)</a></li>
+        <li><a href="xss/xss3s.php">XSS 3 (Shift_JIS)</a></li>
+</ul>
+-->
+
+<h2>JS_XSS</h2>
+<p>&#039;;alert(document.cookie);// &quot;</p>
+<ul>
+        <li><a href="js_xss/js_xss.php">JS XSS 1</a></li>
+        <li><a href="js_xss/js_xss2.php">JS XSS 2</a></li>
+        <!--
+        <li><a href="js_xss/js_xss3.php">JS XSS 3(not vulnerable)</a></li>
+-->
+</ul>
+
+<h2>CSS_XSS</h2>
+<ul>
+        <li><a href="xss/css.php">CSS XSS</a></li>
+</ul>
+
+<h2>SQL Injection</h2>
+<ul>
+        <li><a href="sql/sql.php">SQL Injection(mysql)</a></li>
+        <li><a href="sql/sql_ne.php">SQL Injection (display_errors: off)</a></li>
+        <li><a href="sql/sql2.php">SQL Injection (mysqli)</a></li>
+        <li><a href="sql/sql3.php">SQL Injection (PDO)</a></li>
+        <li><a href="sql/">SQL Injection (ページ遷移)</a></li>
+</ul>
+
+<h2>Directory Traversal</h2>
+<ul>
+        <li><a href="dir/dir.html">Directory Traversal 1</a></li>
+        <li><a href="dir/dir_ne.html">Directory Traversal 2(display_errors: off)</a></li>
+</ul>
+
+
+<h2>Command Injection</h2>
+<ul>
+        <li><a href="command/command.html">Command Injection 1</a></li>
+        <li><a href="command/command_ne.html">Command Injection 2(display_errors: off)</a></li>
+</ul>
+
+<h2>CSRF</h2>
+<ul>
+        <li><a href="csrf/csrf.php">CSRF</a></li>
+</ul>
+
+<h2>Click Jacking</h2>
+<ul>
+        <li><a href="clickjacking/">Click Jacking</a></li>
+</ul>
+
+<h2>misc</h2>
+<ul>
+        <li><a href="misc/">misc</a></li>
+</ul>
+
+
+
+
+
+</body>
+</html>
